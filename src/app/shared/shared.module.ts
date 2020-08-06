@@ -7,11 +7,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { DisplayuserComponent } from './components/displayuser/displayuser.component';
-import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, LoginComponent, PageNotFoundComponent, DisplayuserComponent, ProfileComponent],
+  declarations: [HeaderComponent, LoginComponent, PageNotFoundComponent, DisplayuserComponent],
   imports: [
     CommonModule, MatButtonModule, MatCardModule, MatChipsModule
   ],

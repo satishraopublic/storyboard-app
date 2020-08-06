@@ -12,6 +12,7 @@ import { DisplayuserComponent } from './shared/components/displayuser/displayuse
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MatChipsModule } from '@angular/material/chips';
     LoginComponent,
     HomeComponent,
     PageNotFoundComponent,
-    DisplayuserComponent
+    DisplayuserComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

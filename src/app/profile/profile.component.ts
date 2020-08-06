@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserStateService } from '../../services/user-state.service';
-import { IUserInfo } from '../../types/iuser-info';
+import { UserStateService } from '../shared/services/user-state.service';
+import { IUserInfo } from '../shared/types/iuser-info';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 

@@ -1,0 +1,10 @@
+mat-card{
+    width:200px;
+    height: 100px    ;
+    background-color: cornflowerblue;
+    margin: 10px;
+}
+
+mat-chip{
+    background-color: crimson;
+}
