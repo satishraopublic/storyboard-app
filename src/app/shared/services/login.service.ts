@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { UserStateService } from './user-state.service';
 import { UserInfo } from '../types/user-info';
 import { IUserInfo } from '../types/iuser-info';
@@ -7,6 +7,8 @@ import { IUserInfo } from '../types/iuser-info';
   providedIn: 'root'
 })
 export class LoginService {
+
+  @Output() userLoggedIn: EventEmitter<any> = new EventEmitter<any>(); 
 
   constructor(private userState: UserStateService) { 
 
@@ -17,6 +19,7 @@ export class LoginService {
       if(password == 'password'){
         var u = new UserInfo('Satish','Rao','srao',true);
         this.userState.SetUser(u);
+        this.userLoggedIn.emit(u);
         return u;
       }
     }
@@ -24,10 +27,20 @@ export class LoginService {
       if(password == 'password'){
         var u = new UserInfo('Manager','','manager',true);
         this.userState.SetUser(u);
+        this.userLoggedIn.emit(u);
         return u;
       }
     }
     return null;
   }
+
+  signOut() {
+    this.userState.SetUser(null);
+    this.userLoggedIn.emit(null);
+  }
+
+  getEmitter() { 
+    return this.userLoggedIn; 
+  } 
 
 }

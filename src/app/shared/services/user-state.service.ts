@@ -18,7 +18,12 @@ export class UserStateService {
 
   SetUser(user: UserInfo){
     this._user = user;
-    localStorage.setItem('token',JSON.stringify(user));
+    if(this._user != null){
+      localStorage.setItem('token',JSON.stringify(user));
+    }
+    else{
+      localStorage.removeItem('token');
+    }
   }
 
   IsUserLogged(): boolean{

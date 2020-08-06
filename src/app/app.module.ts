@@ -8,6 +8,10 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { LoginComponent } from './shared/components/login/login.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
+import { DisplayuserComponent } from './shared/components/displayuser/displayuser.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -15,12 +19,14 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     LoginComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DisplayuserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule, MatChipsModule, MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

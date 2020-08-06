@@ -1,1 +1,5 @@
-<p>displayuser works!</p>
+<div *ngIf="IsLoggedIn"  class="welcome">
+    Welcome 
+</div>
+<button mat-raised-button color="primary"  style="margin: 2px;" (click)="linkClicked()">{{displayName}}</button>
+<button *ngIf="IsLoggedIn" color="warn" mat-raised-button  style="margin: 2px;" (click)="signout()">Sign Out</button>
