@@ -4,10 +4,12 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 import { AuthGuardGuard } from './guards/auth-guard.guard';
 import { LoginComponent } from './shared/components/login/login.component';
-import { ProfileComponent } from './shared/components/profile/profile.component';
+import { ProfileComponent } from './profile/profile.component';
+import { CreatestoryboardComponent } from './createstoryboard/createstoryboard.component';
 
 const routes: Routes = [
-  { path: 'profile', component: ProfileComponent},
+  { path:'createstoryboard', component: CreatestoryboardComponent, canActivate: [AuthGuardGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardGuard] },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuardGuard] },
   { path: 'login', component: LoginComponent},
   { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to `first-component`

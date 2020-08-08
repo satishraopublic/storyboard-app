@@ -1,1 +1,35 @@
-<p>home works!</p>
+<div class="flexContainer" fxLayout="row wrap" flexLayoutGap="10px">
+    <mat-card class="option-card" fxFlex>
+        <mat-card-header>
+          <div mat-card-avatar class="option-header-image"></div>
+          <mat-card-title>Create a Storyboard</mat-card-title>
+          <mat-card-subtitle>Images and Text based storyboards</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Create storyboard to convey your ideas for an application or a tool to your
+            team. You can add notes for each frame in your storyboard. 
+            Have fun..
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="createStoryBoard()">Create</button>
+        </mat-card-actions>
+      </mat-card>
+      <mat-card class="option-card" fxFlex>
+        <mat-card-header>
+          <div mat-card-avatar class="option-header-image"></div>
+          <mat-card-title>Open a Storyboard</mat-card-title>
+          <mat-card-subtitle>Modify already created storyboards.</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Change the storyboards you have already created. Make improvements and convey better and refined ideas.
+            Have fun..
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary">Open</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>

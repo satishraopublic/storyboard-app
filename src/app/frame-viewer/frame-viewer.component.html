@@ -1,0 +1,5 @@
+<form class="flexContainer" appDnd (fileDropped)="onFilesDropped($event)">
+    <div class="imagePreview" *ngIf="imageURL && imageURL !== ''">
+        <img [src]="imageURL" [alt]="">
+      </div>
+</form>

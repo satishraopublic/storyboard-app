@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>Enter Frame Information</h2>
+<mat-dialog-content class="mat-typography" [formGroup]="form">
+    <mat-form-field>
+        <input matInput placeholder="Frame ID"
+        formControlName="frameId"/>
+    </mat-form-field>
+<br>
+    <mat-form-field>
+        <input matInput placeholder="Description"
+        formControlName="frameDescription"/>
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button class="mat-raised-button" (click)="cancel()">Cancel</button>
+    <button class="mat-raised-button mat-primary"(click)="accept()">Accept</button>
+</mat-dialog-actions>
+
+
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

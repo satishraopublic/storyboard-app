@@ -1,0 +1,6 @@
+.flexContainer
+{
+    background-image: url("../../assets/uploadfile2.png");
+    min-height: 400px;
+    background-size: cover;
+}

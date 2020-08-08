@@ -1,0 +1,23 @@
+.flexContainer{
+    background-color: gray;
+}
+.option-card{
+    display: block;
+    width: 300px;
+    max-width: 390px;
+    height: 180px;
+    background-color: rgb(155, 235, 155);
+    margin:5px;
+}
+.option-header-image{
+    background-image: url('../../assets/addframe.png');
+    background-size: cover;
+}
+
+.highlighted-frame{
+    background: skyblue;
+  }
+  
+  .not-highlighted-frame{
+    background: #fbeafc;
+  }

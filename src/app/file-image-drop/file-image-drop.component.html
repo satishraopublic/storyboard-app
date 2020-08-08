@@ -1,0 +1,7 @@
+<div class="flexContainer" appDnd (fileDropped)="onFilesDropped($event)">
+    <input type="file" #fileUploadRef id="fileUploadRef" multiple (change)="fileBrowserHandler($event.target.files)"/>
+    <img src="../../assets/uploadFile.png" alt=""/>
+    <h3>Drag and drop file here</h3>
+    <h3>or</h3>
+    <label for="fileDropRef">Browse for file</label>
+</div>

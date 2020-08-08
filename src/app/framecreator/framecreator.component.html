@@ -1,0 +1,23 @@
+<div class="flexContainer" fxLayout="row" fxLayoutAlign="start center">
+    <mat-card class="option-card">
+        <mat-card-header>
+          <div mat-card-avatar class="option-header-image"></div>
+          <mat-card-title>Frame creator</mat-card-title>
+          <mat-card-subtitle>Click on the plus icon below to create a new frame at the end of existing frames</mat-card-subtitle>
+        </mat-card-header>
+          <mat-card-content fxLayout="column" fxLayoutAlign="center center" fxLayoutFill>
+            <button mat-fab color="primary" aria-label="Add a frame" (click)="AddFrame()">
+                <mat-icon>add</mat-icon>
+              </button>
+          </mat-card-content>
+        </mat-card>
+        <mat-card  class="option-card" *ngFor="let frame of frames" (click)="select(frame.id)" 
+                [ngClass]="{'highlighted-frame' : isSelected(frame.id), 'not-highlighted-frame' : !isSelected(frame.id)}">
+            <mat-card-header>
+              <mat-card-title>{{ frame.id }}</mat-card-title>
+              <mat-card-subtitle>{{ frame.description }}</mat-card-subtitle>
+            </mat-card-header>
+              <mat-card-content fxLayout="column" fxLayoutAlign="center center" fxLayoutFill>
+              </mat-card-content>
+            </mat-card>
+    </div>
