@@ -1,5 +1,5 @@
 <form class="flexContainer" appDnd (fileDropped)="onFilesDropped($event)">
-    <div class="imagePreview" *ngIf="imageURL && imageURL !== ''">
-        <img [src]="imageURL" [alt]="">
+    <div  class="imagePreview">
+        <angular-cropper #imageViewer [cropperOptions]="config" [imageUrl]="imageUrl" (ready)="ready" *ngIf="imageUrl && imageUrl !== ''"></angular-cropper>
       </div>
 </form>

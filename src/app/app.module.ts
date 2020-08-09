@@ -28,6 +28,7 @@ import { FrameMetaDataComponent } from './frame-meta-data/frame-meta-data.compon
 import { FileImageDropComponent } from './file-image-drop/file-image-drop.component';
 import { DndDirective } from './directives/dnd.directive';
 import { FrameViewerComponent } from './frame-viewer/frame-viewer.component';
+import { AngularCropperjsModule } from 'angular-cropperjs';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { FrameViewerComponent } from './frame-viewer/frame-viewer.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     FormsModule, ReactiveFormsModule,
+    AngularCropperjsModule,
     MatButtonModule, MatChipsModule, MatCardModule, MatIconModule, MatDialogModule, MatFormFieldModule, MatInputModule
   ],
   providers: [],

@@ -1,6 +1,14 @@
 .flexContainer
 {
     background-image: url("../../assets/uploadfile2.png");
-    min-height: 400px;
+    min-height: 685px;
     background-size: cover;
 }
+
+/* Ensure the size of the image fit the container perfectly */
+img {
+    display: block;
+  
+    /* This rule is very important, please don't ignore this */
+    max-width: 100%;
+  }

@@ -1,0 +1,7 @@
+.messageArea{
+    min-height: 687px;
+}
+.messageCard{
+    min-width: 300px;
+    max-width: 300px;
+}
