@@ -13,6 +13,7 @@ export class InputframeinfoComponent implements OnInit {
 
     form: FormGroup;
     id:string;
+    name:string;
     description:string;
   
     constructor(private fb: FormBuilder,
@@ -24,6 +25,7 @@ export class InputframeinfoComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
         frameId: [this.id, []],
+        frameName: [this.name, []],
         frameDescription: [this.description, []]
     });
   }

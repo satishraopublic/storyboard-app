@@ -3,17 +3,17 @@
         <h2 mat-dialog-title>Enter Frame Information</h2>
         <div [formGroup]="form" style="margin: 10px;"  >
             <mat-form-field>
-                <input matInput placeholder="Name" formControlName="name"/>
+                <input matInput placeholder="Name" formControlName="name" [(ngModel)]="_currentFrame.name"/>
             </mat-form-field>
             <br>
             <mat-form-field>
-                <textarea matInput placeholder="Description" class="formText" formControlName="description"></textarea>
+                <textarea matInput placeholder="Description" class="formText" formControlName="description" [(ngModel)]="_currentFrame.description"></textarea>
             </mat-form-field>
             <br>
         </div>
         <div align="end">
-            <button class="mat-raised-button" >Cancel</button>
-            <button class="mat-raised-button mat-primary">Accept</button>
+            <button class="mat-raised-button" (click)="cancel()">Cancel</button>
+            <button class="mat-raised-button mat-primary" (click)="accept()">Accept</button>
         </div>
     </div>
 </div>

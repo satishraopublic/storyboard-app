@@ -14,13 +14,17 @@ import { Observable } from 'rxjs';
 })
 export class FramecreatorComponent implements OnInit {
 
-  frames: Observable<Frame[]>;
+  frames$: Observable<Frame[]>;
+  frames: Frame[];
   selected:string=null;
   constructor(public dialog: MatDialog,private commService: CommunicatorService,private frameService: FrameService) { }
 
   ngOnInit(): void {
-    this.frames = this.frameService.frames;
+    this.frames$ = this.frameService.frames;
     this.frameService.loadAll();
+    this.frames$.subscribe(c=>{
+      this.frames = c;
+    });
   }
 
   AddFrame(){
@@ -29,7 +33,8 @@ export class FramecreatorComponent implements OnInit {
       if(result != undefined){
         this.frameService.create({
           id: result.frameId,
-          description: result.description
+          name: result.frameName,
+          description: result.frameDescription
         })
       }
     })

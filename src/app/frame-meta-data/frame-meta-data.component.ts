@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { Frame } from '../shared/services/frame.service';
+import { Frame, FrameService } from '../shared/services/frame.service';
 import { Observable } from 'rxjs';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-frame-meta-data',
@@ -14,22 +15,32 @@ export class FrameMetaDataComponent implements OnInit {
   name:string;
   description:string;
 
-  @Input() currentFrame: Observable<Frame>;
+  @Input() 
+  get currentFrame(): Frame { return this._currentFrame; }
+  set currentFrame(currentFrame: Frame){
+    this._currentFrame = currentFrame;
+  }
+  _currentFrame: Frame;
 
-  frame: Frame;
-
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private fs: FrameService) { 
 
     }
 
 ngOnInit(): void {
-
-  this.currentFrame.subscribe(c=>{
-    this.frame = c;
-  })
   this.form = this.fb.group({
-      name: [this.name, [this.frame.name]],
-      description: [this.description, [this.frame.id]]
+      name: this.currentFrame.name,
+      description: this.currentFrame.description
   });
 }
+
+accept():void{
+  if(this._currentFrame.id != null && this._currentFrame.id != undefined){
+    this.fs.update(this._currentFrame);
+  }
+}
+
+cancel():void{
+
+}
+
 }

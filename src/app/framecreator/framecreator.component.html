@@ -11,10 +11,10 @@
               </button>
           </mat-card-content>
         </mat-card>
-        <mat-card  class="option-card" *ngFor="let frame of frames| async" (click)="select(frame.id)" 
+        <mat-card  class="option-card" *ngFor="let frame of frames" (click)="select(frame.id)" 
                 [ngClass]="{'highlighted-frame' : isSelected(frame.id), 'not-highlighted-frame' : !isSelected(frame.id)}">
             <mat-card-header>
-              <mat-card-title>{{ frame.id }}</mat-card-title>
+              <mat-card-title>{{ frame.name }}</mat-card-title>
               <mat-card-subtitle>{{ frame.description }}</mat-card-subtitle>
             </mat-card-header>
               <mat-card-content fxLayout="column" fxLayoutAlign="center center" fxLayoutFill>

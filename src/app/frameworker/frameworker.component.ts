@@ -13,6 +13,7 @@ export class FrameworkerComponent implements OnInit {
 isSelected:boolean=false;
 selectedId: any;
 currentFrame$: Observable<Frame>;
+actualFrame: Frame;
   constructor(private commService: CommunicatorService, private frameService: FrameService) { }
 
   ngOnInit(): void {
@@ -25,6 +26,9 @@ currentFrame$: Observable<Frame>;
         );
     
         this.frameService.load(this.selectedId);
+        this.currentFrame$.subscribe(c=>{
+          this.actualFrame = c;
+        })
       }
       else{
         this.isSelected = false;

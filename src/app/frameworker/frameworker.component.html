@@ -1,6 +1,6 @@
 <div class="flexContainer" fxLayout="row" fxLayoutAlign="start start" *ngIf="isSelected">
         <app-frame-viewer fxFlex="70"></app-frame-viewer>
-        <app-frame-meta-data fxFlex="30" [currentFrame]="currentFrame$"></app-frame-meta-data>
+        <app-frame-meta-data fxFlex="30" [currentFrame]="actualFrame"></app-frame-meta-data>
 </div>
 <div class="messageArea" *ngIf="!isSelected" fxLayout="row" fxLayoutAlign="center center">
         <mat-card class="messageCard">
